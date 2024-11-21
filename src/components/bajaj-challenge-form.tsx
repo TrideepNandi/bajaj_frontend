@@ -49,8 +49,8 @@ export default function BajajChallengeForm() {
     }
 
     try {
-    //   const res = await fetch('api/bfhl', {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bfhl`, {
+      //   const res = await fetch('api/bfhl', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/bfhl`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -139,11 +139,10 @@ export default function BajajChallengeForm() {
               <button
                 key={option}
                 onClick={() => handleFilterChange(option)}
-                className={`px-4 py-2 rounded-md text-sm font-medium ${
-                  selectedFilters.includes(option)
+                className={`px-4 py-2 rounded-md text-sm font-medium ${selectedFilters.includes(option)
                     ? 'bg-indigo-600 text-white'
                     : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                }`}
+                  }`}
               >
                 {option.replace(/_/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase())}
               </button>
